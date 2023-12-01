@@ -79,7 +79,7 @@ The following methods are available to a builder instance:
 
 The `.body` function is used to declare that an endpoint is capable of receiving a body of data. It accepts a single argument defining the shape of accepted data for the endpoint
 
-[API docs: body](./classes/builder.PAPIBuilder.html#body)
+[API docs: body](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#body)
 
 #### `.build`
 
@@ -90,40 +90,40 @@ The `.build` function is used to create a PAPITool for calling API endpoints. It
 | `apiKey` | Automatically attach `Bearer ${apiKey}` values to the Authorization header |
 | `life`   | Convert the PAPITool into a Temporary PAPITool (see below)                 |
 
-[API docs: build](./classes/builder.PAPIBuilder.html#build)
+[API docs: build](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#build)
 
 #### `.endpoint`
 
 The `.endpoint` function defines the shape of the responses for a given endpoint, associated with one of the 5 most common HTTP methods (DELETE, GET, PATCH, POST, and PUT). Multiple endpoints can be defined for different methods within the same level. It accepts two arguments; The first is the associated HTTP method symbol for the endpoint (eg `$GET`), and the second is the shape of the expected response when calling the endpoint with the given method
 
-[API docs: endpoint](./classes/builder.PAPIBuilder.html#endpoint)
+[API docs: endpoint](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#endpoint)
 
 #### `.error`
 
 The `.error` function defines the shape of the repsponse for a given endpoint's error. When provided, the built PAPITool will return the union of the endpoint shape and the error shape to indicate that error responses must be handled. It accepts a single argument defining the shape of error responses
 
-[API docs: error](./classes/builder.PAPIBuilder.html#error)
+[API docs: error](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#error)
 
 #### `.path`
 
 The `.path` function defines a subpath for the current level of the PAPIBuilder. Typically, the top level of a PAPIBuilder will include nothing but paths, and paths may be nested arbitrarily deep. It accepts two arguments; The first is a string of the path segment, and the second is a BuilderFunction which is used to define the shape of the path
 
-[API docs: path](./classes/builder.PAPIBuilder.html#path)  
-[API docs: BuilderFunction](./classes/builder.BuilderFunction.html)
+[API docs: path](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#path)  
+[API docs: BuilderFunction](https://studiokeywi.github.io/papi/classes/builder.BuilderFunction.html)
 
 #### `.query`
 
 The `.query` function defines query parameters that may be appended to an endpoint request. It accepts two arguments; The first is the shape of query parameters that may be used when calling an endpoint, and the second is an optional BuilderFunction which is used to define alternate endpoint shapes when query parameters are used
 
-[API docs: query](./classes/builder.PAPIBuilder.html#query)  
-[API docs: BuilderFunction](./classes/builder.BuilderFunction.html)
+[API docs: query](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#query)  
+[API docs: BuilderFunction](https://studiokeywi.github.io/papi/classes/builder.BuilderFunction.html)
 
 #### `.slug`
 
 The `.slug` function defines a subpath where the actual pathname is not fixed but may be replaced by a given value. Typically this is seen with ID values representing a path segment as opposed to using a query parameter to provide the ID. It accepts a single argument, which is a BuilderFunction that defines the shape of the path represented by the slug value
 
-[API docs: slug](./classes/builder.PAPIBuilder.html#slug)  
-[API docs: BuilderFunction](./classes/builder.BuilderFunction.html)
+[API docs: slug](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#slug)  
+[API docs: BuilderFunction](https://studiokeywi.github.io/papi/classes/builder.BuilderFunction.html)
 
 ### PAPITool
 
@@ -147,7 +147,7 @@ The types for PAPI assist with ensuring any calls you make match the shape defin
 - Knowing whether an endpoint returns a different response when using query parameters
 - Knowing whether an endpoint has a different error response shape
 
-[API docs: PAPITool](./types/papi.PAPITool.html)
+[API docs: PAPITool](https://studiokeywi.github.io/papi/types/papi.PAPITool.html)
 
 #### PAPITool Configuration
 
@@ -159,9 +159,9 @@ Additionally, the following fields may be provided to alter the caller's behavio
 - `parse`: set the automatic parsing mode for the request from one of `arrayBuffer`, `blob`, `formData`, `json`, or `text` (default: `json`)
 - `query`: may be used to provide query parameter values in a `{ [key]: value }` syntax without manually converting to a string
 
-[API docs: PAPITool Caller config](./types/papi.PAPICallerConfig.html)  
-[API docs: PAPITool Caller `body` config](./types/papi.PAPIBodyCfg.html)  
-[API docs: PAPITool Caller `query` config](./types/papi.PAPIQueryCfg.html)
+[API docs: PAPITool Caller config](https://studiokeywi.github.io/papi/types/papi.PAPICallerConfig.html)  
+[API docs: PAPITool Caller `body` config](https://studiokeywi.github.io/papi/types/papi.PAPIBodyCfg.html)  
+[API docs: PAPITool Caller `query` config](https://studiokeywi.github.io/papi/types/papi.PAPIQueryCfg.html)
 
 ## TAPI
 
