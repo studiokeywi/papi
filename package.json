@@ -1,0 +1,46 @@
+{
+  "name": "@studiokeywi/papi",
+  "version": "0.0.1",
+  "description": "PAPI - The Proxy API tool to make API calls friendlier",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "esbuild \"./lib/**/*.ts\" --outdir=dist & esbuild \"./test/**/*.test.ts\" --outdir=test & typedoc",
+    "build:lib": "esbuild \"./lib/**/*.ts\" --outdir=dist",
+    "build:test": "esbuild \"./test/**/*.ts\" --outdir=test",
+    "build:types": "typedoc",
+    "clean": "rm -rf ./dist & rm -rf ./public & rm -rf ./tests/*.spec.js",
+    "test": "npm run build:test && node --test",
+    "types": "typedoc"
+  },
+  "author": "studioKeywi <dev@studiokeywi.dev> (https://studiokeywi.dev/)",
+  "license": "MIT",
+  "repository": {
+    "directory": "papi",
+    "type": "git",
+    "url": "github:studiokeywi/papi"
+  },
+  "files": [
+    "dist/",
+    "lib/"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.10.1",
+    "esbuild": "^0.19.8",
+    "typedoc": "^0.25.4"
+  }
+}

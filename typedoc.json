@@ -1,0 +1,7 @@
+{
+  "disableSources": true,
+  "emit": "both",
+  "entryPoints": ["lib/**/*.ts"],
+  "includeVersion": true,
+  "out": "public"
+}
