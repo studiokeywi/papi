@@ -39,7 +39,7 @@ jobs:
       - name: Install Node.js dependencies
         run: 'npm i'
       - name: Build with Typedoc
-        run: 'npm run build'
+        run: 'npm run build:types'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
@@ -55,6 +55,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-      - name: Publish to NPMJS
-        run: 'ls .' # just check out if we have the /dist folder as expected
-        # run: 'npm run publish'
+      # TODO: figure out NPM auth in a pipeline before trying this, dummy
+      # - name: Publish to NPMJS
+      #   run: 'npm run build:lib && npm run publish'
