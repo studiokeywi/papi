@@ -1,6 +1,6 @@
 {
   "name": "@studiokeywi/papi",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "PAPI - The Proxy API tool to make API calls friendlier",
   "type": "module",
   "main": "./dist/index.js",
@@ -8,16 +8,12 @@
     ".": {
       "types": "./types/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./types/*.d.ts"
     }
   },
   "types": "./types/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "./types/index.d.ts"
-      ]
-    }
-  },
   "scripts": {
     "build": "esbuild \"./lib/**/*.ts\" --outdir=dist & esbuild \"./test/**/*.test.ts\" --outdir=test & typedoc",
     "build:lib": "esbuild \"./lib/**/*.ts\" --outdir=dist",

@@ -36,6 +36,8 @@ Additionally, the following fields may be provided to alter the caller's behavio
 - `parse`: set the automatic parsing mode for the request from one of `arrayBuffer`, `blob`, `formData`, `json`, `raw` or `text` (default: `json`). The `raw` mode may be used to directly return the `fetch` response without processing
 - `query`: may be used to provide query parameter values in a `{ [key]: value }` syntax without manually converting to a string
 
+**WARNING:** Although alternate modes for parsing can be provided, PAPI assumes the response will be parsed as JSON and will reflect as such in IntelliSense. Conversion by explicitly casting through `unknown` may be required
+
 [API docs: PAPITool Caller config](https://studiokeywi.github.io/papi/types/papi.PAPICallerConfig.html)  
 [API docs: PAPITool Caller `body` config](https://studiokeywi.github.io/papi/types/papi.PAPIBodyCfg.html)  
 [API docs: PAPITool Caller `query` config](https://studiokeywi.github.io/papi/types/papi.PAPIQueryCfg.html)
