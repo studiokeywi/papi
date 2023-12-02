@@ -1,5 +1,5 @@
 import { $DELETE, $GET, $PATCH, $POST, $PUT, PAPIBuilder } from '../../dist/index.js';
-import { delay, invariant } from '../utility.js';
+import { delay, invariant } from './utility.js';
 
 const albumShape = { userId: 0, id: 0, title: '' };
 const commentShape = { postId: 0, id: 0, name: '', email: '', body: '' };

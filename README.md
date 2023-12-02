@@ -16,7 +16,7 @@ PAPI is designed with a chainable builder approach to defining the shape of any 
 
 ## Examples
 
-Examples in this README are based on the API endpoints available through [JSONPlaceholder](https://jsonplaceholder.typicode.com). The GitHub repo also contains an [examples folder](https://github.com/studiokeywi/papi/blob/primary/examples/notes.md) showing the code snippets used in this README and other quick reference docs, as well as extra notes about PAPI usage and a fully expanded JSONPlaceholder definition with sample usage
+Examples in this README are based on the API endpoints available through [JSONPlaceholder](https://jsonplaceholder.typicode.com). The GitHub repo also contains an [examples folder](https://github.com/studiokeywi/papi/blob/primary/docs/notes.md) showing the code snippets used in this README and other quick reference docs, as well as extra notes about PAPI usage and a fully expanded JSONPlaceholder definition with sample usage
 
 ### PAPI in 4 Lines
 
@@ -79,7 +79,7 @@ const papi = new PAPIBuilder('https://jsonplaceholder.typicode.com')
   .build();
 ```
 
-See the [PAPIBuilder](https://github.com/studiokeywi/papi/blob/primary/quickref/builder.md) quick reference for more
+See the [PAPIBuilder](https://github.com/studiokeywi/papi/blob/primary/docs/builder.md) quick reference for more
 
 ### PAPITool
 
@@ -100,4 +100,4 @@ photos.forEach(photo => {
 });
 ```
 
-See the [PAPITool](https://github.com/studiokeywi/papi/blob/primary/quickref/tool.md) quick reference for more
+See the [PAPITool](https://github.com/studiokeywi/papi/blob/primary/docs/tool.md) quick reference for more

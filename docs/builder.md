@@ -71,8 +71,8 @@ The `.build` function is used to create a PAPITool for calling API endpoints. It
 | `life`   | Convert the PAPITool into a Temporary PAPITool (see below)                 |
 
 [API docs: build](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#build)
-[GitHub QuickRef: PAPITool](https://github.com/studiokeywi/papi/blob/primary/quickref/tool.md)
-[GitHub QuickRef: Notes on TAPI](https://github.com/studiokeywi/papi/blob/primary/examples/notes.md#tapi)
+[GitHub QuickRef: PAPITool](https://github.com/studiokeywi/papi/blob/primary/docs/tool.md)
+[GitHub QuickRef: Notes on TAPI](https://github.com/studiokeywi/papi/blob/primary/docs/notes.md#tapi)
 
 ### `.endpoint`
 
