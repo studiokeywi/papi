@@ -14,7 +14,7 @@ const ids = await tapi.dummy[$GET]();
 
 ## Specificity of Responses
 
-The design of PAPI is flexible enough to allow you to pass custom shapes to a variety of builder functions. This is to allow more complex shapes to be defined while permitting the simplicity of generic object shapes. An example with optional response values from an endpoint is shown below:
+The design of PAPI is flexible enough to allow you to pass custom shapes to a variety of builder functions in TypeScript. This is to allow more complex shapes to be defined while permitting the simplicity of generic object shapes in JavaScript. An example with optional response values from an endpoint is shown below:
 
 ```typescript
 const fooOptional: { foo?: string } = {};
