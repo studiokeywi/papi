@@ -5,7 +5,9 @@ name:
 on:
   workflow_dispatch:
     inputs:
-      run: false
+      run:
+        default: false
+        type: boolean
   # TODO: look into conditional triggers
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
