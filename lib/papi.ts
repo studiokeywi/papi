@@ -67,8 +67,8 @@ const caller =
     const endpoint = `${url}${query ? `?${query}` : ''}`;
     const resp = await fetch(endpoint, { ...init, ...cfg, ...body });
     const parse = cfg.parse ?? 'json';
-    const data = await resp[parse]();
-    return data;
+    if (parse === 'raw') return resp;
+    return await resp[<'arrayBuffer' | 'blob' | 'formData' | 'json' | 'text'>parse]();
   };
 /** Internal map to convert {@link HTTPMethods} to `fetch`-friendly HTTP `method` values */
 const methodMaps = { [$DELETE]: 'DELETE', [$GET]: 'GET', [$PATCH]: 'PATCH', [$POST]: 'POST', [$PUT]: 'PUT' };
@@ -93,7 +93,9 @@ type PAPICaller<Src extends BuilderRoot, Key extends HTTPMethods> = <Cfg extends
 ) => PAPICallerResponse<Src, Key, Cfg>;
 /** Available configuration for calling API endpoints through a {@link PAPICaller} */
 type PAPICallerConfig<Src extends BuilderRoot> = RequestInit &
-  Expand<PAPIBodyCfg<Src> & PAPIQueryCfg<Src> & { parse?: 'arrayBuffer' | 'blob' | 'formData' | 'json' | 'text' }>;
+  Expand<
+    PAPIBodyCfg<Src> & PAPIQueryCfg<Src> & { parse?: 'arrayBuffer' | 'blob' | 'formData' | 'json' | 'raw' | 'text' }
+  >;
 /** API response from a specified {@link EndpointsShape}'s {@link PAPICaller} */
 type PAPICallerResponse<Src extends BuilderRoot, Key extends HTTPMethods, Cfg = PAPICallerConfig<Src>> = Promise<
   | (Cfg extends { query: any }

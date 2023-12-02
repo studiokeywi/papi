@@ -72,6 +72,7 @@ The `.build` function is used to create a PAPITool for calling API endpoints. It
 
 [API docs: build](https://studiokeywi.github.io/papi/classes/builder.PAPIBuilder.html#build)
 [GitHub QuickRef: PAPITool](https://github.com/studiokeywi/papi/blob/primary/quickref/tool.md)
+[GitHub QuickRef: Notes on TAPI](https://github.com/studiokeywi/papi/blob/primary/examples/notes.md#tapi)
 
 ### `.endpoint`
 

@@ -33,7 +33,7 @@ The PAPITool wraps around the `fetch` WebAPI implementation available to the JS 
 Additionally, the following fields may be provided to alter the caller's behavior:
 
 - `data`: may be used to provide JSON information used as the body of a request without manually converting to a string
-- `parse`: set the automatic parsing mode for the request from one of `arrayBuffer`, `blob`, `formData`, `json`, or `text` (default: `json`)
+- `parse`: set the automatic parsing mode for the request from one of `arrayBuffer`, `blob`, `formData`, `json`, `raw` or `text` (default: `json`). The `raw` mode may be used to directly return the `fetch` response without processing
 - `query`: may be used to provide query parameter values in a `{ [key]: value }` syntax without manually converting to a string
 
 [API docs: PAPITool Caller config](https://studiokeywi.github.io/papi/types/papi.PAPICallerConfig.html)  
