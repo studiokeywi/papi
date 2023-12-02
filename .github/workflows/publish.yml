@@ -28,7 +28,7 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if ${{ inputs.run }}
+    if: ${{ inputs.run }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
