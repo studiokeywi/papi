@@ -14,9 +14,9 @@ const pair = <Key extends string | symbol, Value>(key: Key, value?: Value) => <P
  * @property {BuilderRoot} Root */
 class PAPIBuilder<Root extends BuilderRoot = {}> {
   /** Create a new PAPIBuilder
-   * @param {string} [baseURL]
+   * @param {string} baseURL
    * @param {BuilderConfig<Root>} [config] */
-  constructor(baseURL: string = '', { rootObj = <Root>{} }: BuilderConfig<Root> = {}) {
+  constructor(baseURL: string, { rootObj = <Root>{} }: BuilderConfig<Root> = {}) {
     this.#baseURL = baseURL;
     this.#rootObj = rootObj;
   }

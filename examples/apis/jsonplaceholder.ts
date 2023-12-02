@@ -1,5 +1,5 @@
-import { $DELETE, $GET, $PATCH, $POST, $PUT, PAPIBuilder } from '../lib/index.js';
-import { invariant } from './utility.js';
+import { $DELETE, $GET, $PATCH, $POST, $PUT, PAPIBuilder } from '../../dist/index.js';
+import { delay, invariant } from '../utility.js';
 
 const albumShape = { userId: 0, id: 0, title: '' };
 const commentShape = { postId: 0, id: 0, name: '', email: '', body: '' };
@@ -134,29 +134,40 @@ console.group('start tests');
 const papiTool = papi.build();
 
 console.debug('post empty album data');
-const newAlbum = await papiTool.albums[$POST]({ data: { userId: 1, id: 420, title: 'flarp' } });
-invariant('userId' in newAlbum);
+let newAlbum = await papiTool.albums[$POST]();
+invariant('id' in newAlbum);
 console.log(newAlbum);
+await delay(500);
+
+console.debug('put arbitrary album data');
+newAlbum = await papiTool.albums[1][$PUT]({ data: { title: "studioKeywi's Loudest Hits!" } });
+invariant('id' in newAlbum);
+console.log(newAlbum);
+await delay(500);
 
 console.debug('get all albums, show first');
 const allAlbums = await papiTool.albums[$GET]();
 invariant('length' in allAlbums);
 const [firstAlbum] = allAlbums;
 console.log(firstAlbum);
+await delay(500);
 
 console.debug('get user 3 albums, show first');
 const user3Albums = await papiTool.albums[$GET]({ query: { userId: 3 } });
 invariant('length' in user3Albums);
 const [user3Album] = user3Albums;
 console.log(user3Album);
+await delay(500);
 
 console.debug('delete album 3');
 const deleted = await papiTool.albums['3'][$DELETE]();
 console.log(deleted);
+await delay(500);
 
 console.debug('get album 3 photos, show first');
 const album3Photos = await papiTool.albums[3].photos[$GET]();
 invariant('length' in album3Photos);
 const [album3Photo] = album3Photos;
 console.log(album3Photo);
+
 console.groupEnd();

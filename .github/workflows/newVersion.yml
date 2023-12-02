@@ -1,4 +1,4 @@
-name: Deploy Typedoc site to Pages
+name: Deploy new version & update API docs page
 
 on:
   # Runs on pushes targeting the default branch
@@ -26,7 +26,6 @@ defaults:
     shell: bash
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -40,13 +39,12 @@ jobs:
       - name: Install Node.js dependencies
         run: 'npm i'
       - name: Build with Typedoc
-        run: 'npm run build:types'
+        run: 'npm run build'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -57,3 +55,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      - name: Publish to NPMJS
+        run: 'ls .' # just check out if we have the /dist folder as expected
+        # run: 'npm run publish'

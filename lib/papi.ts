@@ -1,7 +1,7 @@
 import type { BuilderRoot, EndpointData, PAPIBuilder, QueryParameters } from './builder.d.ts';
 import type { $Body, $Error, $Query, $Slug, HTTPMethods } from './symbols.d.ts';
 import { $DELETE, $GET, $PATCH, $POST, $PUT, $body, $error, $query, $slug, httpMethods } from './symbols.js';
-import type { Expand } from './utilities.js';
+import type { DeRead, Expand } from './utilities.d.ts';
 
 /** Create a new PAPI tool
  * @param root Source builder object
@@ -66,7 +66,8 @@ const caller =
     const body = 'data' in cfg ? { body: JSON.stringify(<EndpointData>cfg.data) } : {};
     const endpoint = `${url}${query ? `?${query}` : ''}`;
     const resp = await fetch(endpoint, { ...init, ...cfg, ...body });
-    const data = await resp[cfg.parse ?? 'json']();
+    const parse = cfg.parse ?? 'json';
+    const data = await resp[parse]();
     return data;
   };
 /** Internal map to convert {@link HTTPMethods} to `fetch`-friendly HTTP `method` values */
@@ -97,11 +98,14 @@ type PAPICallerConfig<Src extends BuilderRoot> = RequestInit &
 type PAPICallerResponse<Src extends BuilderRoot, Key extends HTTPMethods, Cfg = PAPICallerConfig<Src>> = Promise<
   | (Cfg extends { query: any }
       ? Src extends QueryableAltShape
-        ? OnlyEndpoints<Src[$Query]>[keyof OnlyEndpoints<Src[$Query]>]
-        : Src[Key]
-      : Src[Key])
+        ?
+            | DeRead<OnlyEndpoints<Src[$Query]>[keyof OnlyEndpoints<Src[$Query]>]>
+            | (Src[$Query] extends ErrorShape ? Src[$Query][$Error] : never)
+        : DeRead<Src[Key]>
+      : DeRead<Src[Key]>)
   | (Src extends ErrorShape ? Src[$Error] : never)
 >;
+
 /** Map between available {@link HTTPMethods} on a given {@link EndpointsShape} to {@link PAPICaller}s */
 type PAPICallers<Src extends BuilderRoot> = {
   [Key in keyof Src as Key extends HTTPMethods ? Key : never]: Key extends HTTPMethods ? PAPICaller<Src, Key> : never;
