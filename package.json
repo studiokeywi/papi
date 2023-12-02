@@ -1,6 +1,6 @@
 {
   "name": "@studiokeywi/papi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "PAPI - The Proxy API tool to make API calls friendlier",
   "type": "module",
   "main": "./dist/index.js",
@@ -36,7 +36,8 @@
   },
   "files": [
     "dist/",
-    "lib/"
+    "lib/",
+    "types/"
   ],
   "devDependencies": {
     "@types/node": "^20.10.2",
