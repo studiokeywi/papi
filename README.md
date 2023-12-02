@@ -16,7 +16,7 @@ PAPI is designed with a chainable builder approach to defining the shape of any 
 
 ## Examples
 
-Examples in this README are based on the API endpoints available through [JSONPlaceholder](https://jsonplaceholder.typicode.com). The GitHub repo also contains an [examples folder](https://github.com/studiokeywi/papi/blob/primary/docs/notes.md) showing the code snippets used in this README and other quick reference docs, as well as extra notes about PAPI usage and a fully expanded JSONPlaceholder definition with sample usage
+Examples in this README are based on the API endpoints available through [JSONPlaceholder](https://jsonplaceholder.typicode.com). The GitHub repo also contains an [examples folder](https://github.com/studiokeywi/papi/blob/primary/examples) showing the [code snippets used in this README and other quick reference docs](https://github.com/studiokeywi/papi/blob/primary/examples/docs.ts), as well as [extra notes](https://github.com/studiokeywi/papi/blob/primary/docs/notes.md) about PAPI usage, and a [fully expanded JSONPlaceholder definition with sample usage](https://github.com/studiokeywi/papi/blob/primary/examples/jsonplaceholder.ts)
 
 ### PAPI in 4 Lines
 

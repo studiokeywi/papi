@@ -1,4 +1,4 @@
-import { $DELETE, $GET, $PATCH, $POST, $PUT, PAPIBuilder } from '../../dist/index.js';
+import { $DELETE, $GET, $PATCH, $POST, $PUT, PAPIBuilder } from '../lib';
 import { delay, invariant } from './utility.js';
 
 const albumShape = { userId: 0, id: 0, title: '' };

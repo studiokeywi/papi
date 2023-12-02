@@ -1,4 +1,4 @@
-import { $DELETE, $GET, $PATCH, $POST, $PUT, $error, $query, $slug, PAPIBuilder } from '../../lib';
+import { $DELETE, $GET, $PATCH, $POST, $PUT, $error, $query, $slug, PAPIBuilder } from '../lib';
 
 papiIn4Lines: {
   // 1. Define a base URL
